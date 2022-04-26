@@ -1,0 +1,38 @@
+.box-search-customer, .box-search-invoices, .box-search-detailinvoice {
+	float: right;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.box-search-invoices input {
+	width: 300px;
+	padding: 5px;
+	border: 1px solid silver;
+	padding: 5px;
+}
+
+.box-search-customer input, .box-search-detailinvoice input {
+	width: 250px;
+	padding: 5px;
+	border: 1px solid silver;
+	padding: 5px;
+}
+
+.ti-search {
+	width: 40px;
+	height: 38px;
+	line-height: 38px;
+	background-color: #2980b9;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+#btn-delete-customer, #btn-delete-invoice, #btn-delete-detailinvoice {
+	background: none;
+	border: none;
+}

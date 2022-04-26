@@ -1,0 +1,20 @@
+.box-name-password {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 20px;
+}
+
+.box-change-name {
+	margin-right: 50px;
+}
+
+input {
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 5px;
+	margin-bottom: 20px;
+}
+
+input[type=submit] {
+	border: 0;
+}

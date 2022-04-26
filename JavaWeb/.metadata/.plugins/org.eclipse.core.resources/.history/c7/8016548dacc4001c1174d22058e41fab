@@ -1,0 +1,83 @@
+
+searchProducts = () => {
+	let input = document.getElementById("home-btn-search").value;
+	$.ajax({
+		url: '/ProjectDUE/search',
+		type: 'GET',
+		data: {
+			content: input
+		},
+		success: function(data) {
+			const res = JSON.parse(data);
+			var products = res.map((product) => {
+				let classElement = addClass(product.id);
+				const status = (product.quantity > 0) ? "Stocking" : "Sold out";
+				return `<div id="${product.id}" class="item item-grid${classElement}">
+									<div class="item-wrap">
+										<div class="work-item">
+											<div class="work-pic">
+												<img src="${product.image}" alt="image">
+											</div>
+											<div class="hover-content">
+												<div class="hover-text text-center">
+													<a href="img/${product.image}" data-lightbox="roadtrip"><span
+														class="ti-fullscreen"></span></a>
+												</div>
+												<div class="project-description text-uppercase ul-li">
+													<h3>
+														<a href="#">${product.name}</a>
+													</h3>
+													<ul class="project-catagorry text-capitalize">
+														<li><a href="product?id=${product.id}">See detail</a></li>
+														<br>
+														<li><a href="#">${product.price}VNĐ </a></li>
+														<br>
+														<li><a href="#">
+														${status}
+														</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>`;
+			});
+			document.getElementById("posts").innerHTML = products.join("");
+		}
+	})
+}
+
+addClass = (id) => {
+	let classElement = '';
+
+	switch (id) {
+		case 1:
+		case 2:
+		case 3:
+		case 5:
+		case 7:
+		case 8:
+		case 9:
+		case 10:
+			classElement += ' web';
+
+		case 2:
+		case 6:
+		case 7:
+		case 9:
+		case 10:
+			classElement += ' design';
+
+		case 4:
+		case 8:
+			classElement += ' photography';
+
+		case 8:
+		case 11:
+		case 12:
+		case 13:
+			classElement += ' branding';
+	}
+
+	return classElement;
+}

@@ -1,0 +1,60 @@
+searchInvoice = () => {
+	let input = document.getElementById("input-search-invoices").value;
+	$.ajax({
+		url: '/management/invoices',
+		type: 'GET',
+		data: {
+			content: input
+		},
+		success: function(data) {
+			const res = JSON.parse(data);
+			let index = 1;
+			let output = res.map((invoice) => {
+				return `<tr>
+						<th scope="row">${index++}</th>
+						<td>${invoice.id}</td>
+						<td>${invoice.customer.name}</td>
+						<td>${invoice.time}</td>
+						<td>${invoice.totalMoney}</td>
+						<td><a href="detail?id=${invoice.id}"><img src="img/detail.png" width="30"
+								height="30"></a></td>
+						<td><button onClick="deleteInvoice(${invoice.id})" id="btn-delete-invoice">
+								<img src="img/remove.png" width="30" height="30">
+							</button></td>
+					</tr>`
+			});
+			document.getElementById("tbody-invoices").innerHTML = output;
+		}
+	});
+}
+
+deleteInvoice = (idInvoice) => {
+	let input = document.getElementById("input-search-invoices").value;
+	$.ajax({
+		url: '/ProjectDUE/invoices',
+		type: 'GET',
+		data: {
+			id: idInvoice,
+			content: input
+		},
+		success: function(data) {
+			const res = JSON.parse(data);
+			let index = 1;
+			let output = res.map((invoice) => {
+				return `<tr>
+						<th scope="row">${index++}</th>
+						<td>${invoice.id}</td>
+						<td>${invoice.customer.name}</td>
+						<td>${invoice.time}</td>
+						<td>${invoice.totalMoney}</td>
+						<td><a href="detail?id=${invoice.id}"><img src="img/detail.png" width="30"
+								height="30"></a></td>
+						<td><button onClick="deleteInvoice(${invoice.id})" id="btn-delete-invoice">
+								<img src="img/remove.png" width="30" height="30">
+							</button></td>
+					</tr>`
+			});
+			document.getElementById("tbody-invoices").innerHTML = output;
+		}
+	});
+}
