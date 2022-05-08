@@ -45,12 +45,7 @@
 <!-- responsive.css -->
 <link rel="stylesheet" type="text/css" href="css/responsive.css">
 <link rel="stylesheet" type="text/css" href="css/customer_style.css">
-
-<style type="text/css">
-</style>
 </head>
-
-
 <body>
 	<%
 	Account account = (Account) session.getAttribute("account");
@@ -118,46 +113,48 @@
 		============================================= -->
 	<section id="portfolio" class="portfolio-section">
 		<div class="container">
-			<div class="title-page-management" style="margin-bottom: 30px;">
-				<h2>Invoice Detail Management</h2>
+			<div class="header">
+				<div class="title-page-management" style="margin-bottom: 30px;">
+					<h2>Invoice Detail Management</h2>
+				</div>
 			</div>
-			<table class="table">
-				<thead>
-					<tr>
-						<th scope="col">#</th>
-						<th scope="col">Invoice ID</th>
-						<th scope="col">Product ID</th>
-						<th scope="col">Product</th>
-						<th scope="col">Quantity</th>
-						<th scope="col">Hire time</th>
-						<th scope="col">Total payment</th>
-						<th scope="col"></th>
-					</tr>
-				</thead>
-				<tbody id="tbody-detailinvoice">
-					<%
-					int index = 1;
-					for (Detail detail : details) {
-					%>
-					<tr>
-						<th scope="row"><%=index++%></th>
-						<td><%=detail.getIdInvoice()%></td>
-						<td><%=detail.getProduct().getId()%></td>
-						<td><%=detail.getProduct().getName()%></td>
-						<td><%=detail.getQuantity()%></td>
-						<td><%=detail.getTime()%></td>
-						<td><%=detail.getIntoMoney()%></td>
-						<td><button
-								onClick="deleteDetailInvoice(<%=detail.getIdInvoice()%>, <%=detail.getProduct().getId()%>)"
-								id="btn-delete-detailinvoice">
-								<img src="img/remove.png" width="30" height="30">
-							</button></td>
-					</tr>
-					<%
-					}
-					%>
-				</tbody>
-			</table>
+			<div class="table-responsive">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Invoice ID</th>
+							<th scope="col">Product</th>
+							<th scope="col">Quantity</th>
+							<th scope="col">Hire time</th>
+							<th scope="col">Total payment</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody id="tbody-detailinvoice">
+						<%
+						int index = 1;
+						for (Detail detail : details) {
+						%>
+						<tr>
+							<th scope="row"><%=index++%></th>
+							<td><%=detail.getIdInvoice()%></td>
+							<td><%=detail.getProduct().getName()%></td>
+							<td><%=detail.getQuantity()%></td>
+							<td><%=detail.getTime()%></td>
+							<td><%=detail.getIntoMoney()%></td>
+							<td><button
+									onClick="deleteDetailInvoice(<%=detail.getIdInvoice()%>, <%=detail.getProduct().getId()%>)"
+									id="btn-delete-detailinvoice">
+									<img src="img/remove.png">
+								</button></td>
+						</tr>
+						<%
+						}
+						%>
+					</tbody>
+				</table>
+			</div>
 		</div>
 		<!--  /.conatiner -->
 	</section>

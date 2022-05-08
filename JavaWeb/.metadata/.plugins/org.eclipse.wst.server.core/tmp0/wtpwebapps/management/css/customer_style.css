@@ -1,7 +1,10 @@
-.box-search-customer, .box-search-invoices, .box-search-detailinvoice {
-	float: right;
+.header {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
+}
+
+.box-search-customer, .box-search-invoices, .box-search-detailinvoice {
+	display: flex;
 	align-items: center;
 	margin-bottom: 10px;
 }
@@ -35,4 +38,19 @@
 #btn-delete-customer, #btn-delete-invoice, #btn-delete-detailinvoice {
 	background: none;
 	border: none;
+}
+
+#btn-delete-customer img, #btn-delete-invoice img,
+	#btn-delete-detailinvoice img, #tbody-invoices a img {
+	max-height: 25px;
+	min-height: 25px;
+	max-width: 25px;
+	min-width: 25px;
+}
+
+@media screen and (max-width: 480px){
+	.header{
+		flex-direction: column;
+		margin-bottom: 20px;
+	}
 }

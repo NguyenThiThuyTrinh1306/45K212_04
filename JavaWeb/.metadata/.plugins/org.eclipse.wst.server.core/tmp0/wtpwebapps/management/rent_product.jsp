@@ -178,15 +178,12 @@
 						<div class="form-group">
 							<label>Choose product</label> <select name="product"
 								class="form-control form-control-md"
-								onchange="loadImageProduct(this.value)" id="products">
-								<option selected>-- Choose product --</option>
+								onchange="loadImageProduct(this.value)" id="products" size =4>
+					
 								<%
 								for (Product product : products) {
 								%>
 								<option value="<%=product.getId()%>"><%=product.getName()%>
-									<b> -- Price: </b>
-									<%=product.getPrice()%> <b> -- Quantity: </b>
-									<%=product.getQuantity()%></option>
 								<%
 								}
 								%>

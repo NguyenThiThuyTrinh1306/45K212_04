@@ -83,6 +83,12 @@ Author:         HTMLmate
 		padding-bottom: 35px;
 		display: table;
 	}
+	.sanpham_box{
+		display: block
+	}
+	.sanpham_content{
+		padding: 20px;
+	}
 }
 
 @media screen and (max-width: 580px) {
@@ -139,7 +145,7 @@ Author:         HTMLmate
 		font-size: 24px;
 	}
 	.portfolio-section {
-		padding-top: 70px;
+		padding-top: 145px;
 	}
 	.button-group button {
 		margin-right: 20px;

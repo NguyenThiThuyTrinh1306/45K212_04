@@ -116,50 +116,54 @@
 		============================================= -->
 	<section id="portfolio" class="portfolio-section">
 		<div class="container">
-			<div class="title-page-management">
-				<h2>Customer Management</h2>
+			<div class="header">
+				<div class="title-page-management">
+					<h2>Customer Management</h2>
+				</div>
+				<div class="box-search-customer">
+					<input id="input-search-customer" oninput="searchCustomer()"
+						type="text" placeholder="Enter name or phone number ..." />
+					<div class="ti-search"></div>
+				</div>
 			</div>
-			<div class="box-search-customer">
-				<input id="input-search-customer" oninput="searchCustomer()"
-					type="text" placeholder="Enter name or phone number ..." />
-				<div class="ti-search"></div>
+			<div class="table-responsive">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Code</th>
+							<th scope="col">Name</th>
+							<th scope="col">Identity</th>
+							<th scope="col">Phone number</th>
+							<th scope="col">Address</th>
+							<th scope="col">Gender</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody id="tbody-customers">
+						<%
+						int index = 1;
+						for (Customer customer : customers) {
+						%>
+						<tr>
+							<th scope="row"><%=index++%></th>
+							<td><%=customer.getId()%></td>
+							<td><%=customer.getName()%></td>
+							<td><%=customer.getCmnd()%></td>
+							<td><%=customer.getPhone()%></td>
+							<td><%=customer.getAddress()%></td>
+							<td><%=customer.getGender()%></td>
+							<td><button onClick="deleteCustomer(<%=customer.getId()%>)"
+									id="btn-delete-customer">
+									<img src="img/remove.png">
+								</button></td>
+						</tr>
+						<%
+						}
+						%>
+					</tbody>
+				</table>
 			</div>
-			<table class="table">
-				<thead>
-					<tr>
-						<th scope="col">#</th>
-						<th scope="col">Code</th>
-						<th scope="col">Name</th>
-						<th scope="col">Identity</th>
-						<th scope="col">Phone number</th>
-						<th scope="col">Address</th>
-						<th scope="col">Gender</th>
-						<th scope="col"></th>
-					</tr>
-				</thead>
-				<tbody id="tbody-customers">
-					<%
-					int index = 1;
-					for (Customer customer : customers) {
-					%>
-					<tr>
-						<th scope="row"><%=index++%></th>
-						<td><%=customer.getId()%></td>
-						<td><%=customer.getName()%></td>
-						<td><%=customer.getCmnd()%></td>
-						<td><%=customer.getPhone()%></td>
-						<td><%=customer.getAddress()%></td>
-						<td><%=customer.getGender()%></td>
-						<td><button onClick="deleteCustomer(<%=customer.getId()%>)"
-								id="btn-delete-customer">
-								<img src="img/remove.png" width="30" height="30">
-							</button></td>
-					</tr>
-					<%
-					}
-					%>
-				</tbody>
-			</table>
 		</div>
 		<!--  /.conatiner -->
 	</section>

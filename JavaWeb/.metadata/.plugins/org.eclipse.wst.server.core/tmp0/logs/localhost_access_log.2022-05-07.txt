@@ -1,0 +1,9 @@
+127.0.0.1 - - [07/May/2022:23:21:32 +0700] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [07/May/2022:23:21:33 +0700] "GET /management/login_form.jsp HTTP/1.1" 200 1634
+0:0:0:0:0:0:0:1 - - [07/May/2022:23:21:33 +0700] "GET /favicon.ico HTTP/1.1" 404 684
+0:0:0:0:0:0:0:1 - - [07/May/2022:23:21:36 +0700] "GET /management/home HTTP/1.1" 200 26754
+0:0:0:0:0:0:0:1 - - [07/May/2022:23:21:36 +0700] "GET /management/img/banner/news-banner.jpg HTTP/1.1" 404 722
+0:0:0:0:0:0:0:1 - - [07/May/2022:23:21:36 +0700] "GET /management/img/banner/thiet-ke-web.png HTTP/1.1" 404 723
+0:0:0:0:0:0:0:1 - - [07/May/2022:23:21:38 +0700] "GET /management/cart.jsp HTTP/1.1" 200 5742
+0:0:0:0:0:0:0:1 - - [07/May/2022:23:21:38 +0700] "GET /management/js/price-view.js HTTP/1.1" 404 708
+0:0:0:0:0:0:0:1 - - [07/May/2022:23:21:40 +0700] "GET /management/rent HTTP/1.1" 200 8727

@@ -60,6 +60,12 @@
 	text-align: center;
 }
 
+.delete-payment, .delete-payment img {
+	min-width: 25px;
+	max-width: 25px;
+	min-height: 25px;
+	max-height: 25px;
+}
 /* #delete-product { */
 /* 	color: white; */
 /* 	background-color: #e74c3c; */
@@ -169,75 +175,77 @@
 		============================================= -->
 	<section id="portfolio" class="portfolio-section">
 		<div class="container">
-			<table class="table">
-				<thead>
-					<tr>
-						<th scope="col">#</th>
-						<th scope="col">Product name</th>
-						<th scope="col">Image</th>
-						<th scope="col">Price</th>
-						<th scope="col">Quantity</th>
-						<th scope="col">Hire time</th>
-						<th scope="col">Payment</th>
-						<th scope="col" colspan="2"></th>
-						<th scope="col">Status</th>
-					</tr>
-				</thead>
-				<%
-				if (cart != null) {
-					float totalMonney = 0;
-				%>
-				<tbody>
+			<div class="table-responsive">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Product name</th>
+							<th scope="col">Image</th>
+							<th scope="col">Price</th>
+							<th scope="col">Quantity</th>
+							<th scope="col">Hire time</th>
+							<th scope="col">Payment</th>
+							<th scope="col" colspan="2"></th>
+							<th scope="col">Status</th>
+						</tr>
+					</thead>
 					<%
-					int index = 1;
-					Product product = null;
-					for (Detail detail : cart) {
-						product = detail.getProduct();
-						totalMonney += detail.getIntoMoney();
+					if (cart != null) {
+						float totalMonney = 0;
 					%>
-					<tr>
-						<th scope="row"><%=index++%></th>
-						<td><%=product.getName()%></td>
-						<td><img src="<%=product.getImage()%>" width="100"
-							height="100"></td>
-						<td><%=product.getPrice()%></td>
-						<td><%=detail.getQuantity()%></td>
-						<td><%=detail.getTime()%></td>
-						<td><%=detail.getIntoMoney()%></td>
-						<td><a id="delete-product"
-							href="cart?del=<%=product.getId()%>"><img
-								src="img/remove.png" width="30" height="30"></a></td>
-						<td><a id="delete-product"
-							href="payment?id=<%=product.getId()%>"><img
-								src="img/payment.png" width="30" height="30"></a></td>
-						<td>
-							<%
-							if (detail.isStatus()) {
-							%> <b style="color: #2980b9">Paid</b> <%
+					<tbody>
+						<%
+						int index = 1;
+						Product product = null;
+						for (Detail detail : cart) {
+							product = detail.getProduct();
+							totalMonney += detail.getIntoMoney();
+						%>
+						<tr>
+							<th scope="row"><%=index++%></th>
+							<td><%=product.getName()%></td>
+							<td><img src="<%=product.getImage()%>" width="100"
+								height="100"></td>
+							<td><%=product.getPrice()%></td>
+							<td><%=detail.getQuantity()%></td>
+							<td><%=detail.getTime()%></td>
+							<td><%=detail.getIntoMoney()%></td>
+							<td><a class="delete-payment"
+								href="cart?del=<%=product.getId()%>"><img
+									src="img/remove.png"></a></td>
+							<td><a class="delete-payment"
+								href="payment?id=<%=product.getId()%>"><img
+									src="img/payment.png"></a></td>
+							<td>
+								<%
+								if (detail.isStatus()) {
+								%> <b style="color: #2980b9">Paid</b> <%
  } else {
  %> <b style="color: #e74c3c">Unpaid</b> <%
  }
  %>
-						</td>
-					</tr>
+							</td>
+						</tr>
+						<%
+						}
+						%>
+						<tr>
+							<td colspan="5"></td>
+							<td><b>Total payment:</b></td>
+							<td><%=totalMonney%> đ</td>
+							<td><a class="delete-payment" href="cart"><img
+									src="img/remove.png"></a></td>
+							<td><a class="delete-payment" href="payment"><img
+									src="img/payment.png"></a></td>
+							<td></td>
+						</tr>
+					</tbody>
 					<%
 					}
 					%>
-					<tr>
-						<td colspan="5"></td>
-						<td><b>Total payment:</b></td>
-						<td><%=totalMonney%> đ</td>
-						<td><a id="delete-product" href="cart"><img
-								src="img/remove.png" width="30" height="30"></a></td>
-						<td><a id="" href="payment"><img src="img/payment.png"
-								width="30" height="30"></a></td>
-						<td></td>
-					</tr>
-				</tbody>
-				<%
-				}
-				%>
-			</table>
+				</table>
+			</div>
 		</div>
 		<!--  /.conatiner -->
 	</section>

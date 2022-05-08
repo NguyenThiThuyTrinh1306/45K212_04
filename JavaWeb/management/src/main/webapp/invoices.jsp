@@ -119,48 +119,52 @@
 		============================================= -->
 	<section id="portfolio" class="portfolio-section">
 		<div class="container">
-			<div class="title-page-management">
-				<h2>Invoice Management</h2>
+			<div class="header">
+				<div class="title-page-management">
+					<h2>Invoice Management</h2>
+				</div>
+				<div class="box-search-invoices">
+					<input id="input-search-invoices" oninput="searchInvoice()"
+						type="text" placeholder="Enter invoice id or name customer ..." />
+					<div class="ti-search"></div>
+				</div>
 			</div>
-			<div class="box-search-invoices">
-				<input id="input-search-invoices" oninput="searchInvoice()"
-					type="text" placeholder="Enter invoice id or name customer ..." />
-				<div class="ti-search"></div>
+			<div class="table-responsive">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Invoice ID</th>
+							<th scope="col">Customer</th>
+							<th scope="col">Hire time</th>
+							<th scope="col">Total payment</th>
+							<th scope="col" colspan="2"></th>
+						</tr>
+					</thead>
+					<tbody id="tbody-invoices">
+						<%
+						int index = 1;
+						for (Invoice invoice : invoices) {
+						%>
+						<tr>
+							<th scope="row"><%=index++%></th>
+							<td><%=invoice.getId()%></td>
+							<td><%=invoice.getCustomer().getName()%></td>
+							<td><%=dateFormat.format(invoice.getTime())%></td>
+							<td><%=invoice.getTotalMoney()%></td>
+							<td><a href="detail?id=<%=invoice.getId()%>"><img
+									src="img/detail.png"></a></td>
+							<td><button id="btn-delete-invoice"
+									onClick="deleteInvoice(<%=invoice.getId()%>)">
+									<img src="img/remove.png">
+								</button></td>
+						</tr>
+						<%
+						}
+						%>
+					</tbody>
+				</table>
 			</div>
-			<table class="table">
-				<thead>
-					<tr>
-						<th scope="col">#</th>
-						<th scope="col">Invoice ID</th>
-						<th scope="col">Customer</th>
-						<th scope="col">Hire time</th>
-						<th scope="col">Total payment</th>
-						<th scope="col" colspan="2"></th>
-					</tr>
-				</thead>
-				<tbody id="tbody-invoices">
-					<%
-					int index = 1;
-					for (Invoice invoice : invoices) {
-					%>
-					<tr>
-						<th scope="row"><%=index++%></th>
-						<td><%=invoice.getId()%></td>
-						<td><%=invoice.getCustomer().getName()%></td>
-						<td><%=dateFormat.format(invoice.getTime())%></td>
-						<td><%=invoice.getTotalMoney()%></td>
-						<td><a href="detail?id=<%=invoice.getId()%>"><img
-								src="img/detail.png" width="30" height="30"></a></td>
-						<td><button id="btn-delete-invoice"
-								onClick="deleteInvoice(<%=invoice.getId()%>)">
-								<img src="img/remove.png" width="30" height="30">
-							</button></td>
-					</tr>
-					<%
-					}
-					%>
-				</tbody>
-			</table>
 		</div>
 		<!--  /.conatiner -->
 	</section>
