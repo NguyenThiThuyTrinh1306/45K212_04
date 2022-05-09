@@ -274,12 +274,6 @@
 					</div>
 					<!--//portfolio-tab-->
 
-
-					<div class="poppin-more text-uppercase text-center">
-						<div class="more-btn">
-							<a href="#">MORE</a>
-						</div>
-					</div>
 					<!-- //.more -->
 
 				</div>

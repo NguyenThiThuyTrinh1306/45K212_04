@@ -172,47 +172,53 @@
 	<section id="portfolio" class="portfolio-section">
 		<div class="container-form">
 			<div class="registration">
-				<div class="title">Registration</div>
-				<form action="payment" method="post">
-					<div class="user-details">
-						<div class="input-box">
-							<span class="details">Customer name</span> <input type="text"
-								name="name" required>
-						</div>
-						<div class="input-box">
-							<span class="details">Phone number</span> <input type="text"
-								name="phone" required>
-						</div>
-						<div class="input-box">
-							<span class="details">ID</span> <input type="text" name="cmnd"
-								required>
-						</div>
-						<div class="input-box">
-							<span class="details">Address</span> <input type="text"
-								name="address" required>
-						</div>
-					</div>
-					<div class="gender-details">
-						<input type="radio" name="gender" id="dot-1" value="Male">
-						<input type="radio" name="gender" id="dot-2" value="Female">
-						<input type="radio" name="gender" id="dot-3" value="Other">
-						<span class="gender-title">Gender</span>
-						<div class="category">
-							<label for="dot-1"> <span class="dot one"></span> <span
-								class="gender">Male</span>
-							</label> <label for="dot-2"> <span class="dot two"></span> <span
-								class="gender">Female</span>
-							</label> <label for="dot-3"> <span class="dot three"></span> <span
-								class="gender">Other</span>
-							</label>
-						</div>
-					</div>
-					<div class="button-payment">
-						<input type="submit" value="Payment">
-					</div>
-				</form>
+			  <div class="title">Registration</div>
+			  <form action="payment" method="post">
+				<div class="user-details">
+				  <div class="input-box">
+					<span class="details">Customer name</span>
+					 <input type="text" name="Customer name" required id="customerName">
+					<span id="errorName" style="color: red;"></span>
+					<span id="errorName_all_leter" style="color: red;"></span>
+				  </div>
+		
+				  <div class="input-box">
+					<span class="details">Phone number</span> <input type="number"
+					  name="Phone" required id="customerPhone">
+					  <span id="errorPhone" style="color: red;"></span>
+				  </div>
+				  <div class="input-box">
+					<span class="details">ID</span> <input type="number" name="ID"
+					  required id="customerId">
+					<span id="errorId" style="color: red;"></span>
+				  </div>
+				  <div class="input-box">
+					<span class="details">Address</span> <input type="text"
+					  name="Address" required id="customerAddress">
+					<span id="errorAddress" style="color: red;"></span>
+				  </div>
+				</div>
+				<div class="gender-details">
+				  <input type="radio" name="gender" id="dot-1" value="Male">
+				  <input type="radio" name="gender" id="dot-2" value="Female">
+				  <input type="radio" name="gender" id="dot-3" value="Other">
+				  <span class="gender-title">Gender</span>
+				  <div class="category">
+					<label for="dot-1"> <span class="dot one"></span> <span
+					  class="gender">Male</span>
+					</label> <label for="dot-2"> <span class="dot two"></span> <span
+					  class="gender">Female</span>
+					</label> <label for="dot-3"> <span class="dot three"></span> <span
+					  class="gender">Other</span>
+					</label>
+				  </div>
+				</div>
+				<div class="button-payment">
+				  <input type="submit" value="Payment" id="btnPayment">
+				</div>
+			  </form>
 			</div>
-		</div>
+		  </div>
 		<!--  /.conatiner -->
 	</section>
 	<!-- End of portfolio section
@@ -270,6 +276,7 @@
 
 
 	<!-- Include script.js -->
+	<script src="./js/Validate.js"></script>
 	<script src="js/script.js"></script>
 
 	<script src="js/price-view.js"></script>

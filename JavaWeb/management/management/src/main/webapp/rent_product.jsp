@@ -271,8 +271,6 @@
 	<!-- Include Counter up -->
 	<script src="js/jquery.counterup.min.js"></script>
 	<script src="js/waypoints.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-	</script>
 	<!-- Include script.js -->
 	<script src="js/script.js"></script>
 
