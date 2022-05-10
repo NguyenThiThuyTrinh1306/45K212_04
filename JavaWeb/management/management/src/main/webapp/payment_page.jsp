@@ -177,24 +177,24 @@
 				<div class="user-details">
 				  <div class="input-box">
 					<span class="details">Customer name</span>
-					 <input type="text" name="Customer name" required id="customerName">
+					 <input type="text" name="name" required id="customerName">
 					<span id="errorName" style="color: red;"></span>
 					<span id="errorName_all_leter" style="color: red;"></span>
 				  </div>
 		
 				  <div class="input-box">
 					<span class="details">Phone number</span> <input type="number"
-					  name="Phone" required id="customerPhone">
+					  name="phone" required id="customerPhone">
 					  <span id="errorPhone" style="color: red;"></span>
 				  </div>
 				  <div class="input-box">
-					<span class="details">ID</span> <input type="number" name="ID"
+					<span class="details">ID</span> <input type="number" name="cmnd"
 					  required id="customerId">
 					<span id="errorId" style="color: red;"></span>
 				  </div>
 				  <div class="input-box">
 					<span class="details">Address</span> <input type="text"
-					  name="Address" required id="customerAddress">
+					  name="address" required id="customerAddress">
 					<span id="errorAddress" style="color: red;"></span>
 				  </div>
 				</div>
