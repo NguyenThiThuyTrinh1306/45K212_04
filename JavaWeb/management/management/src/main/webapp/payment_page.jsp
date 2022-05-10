@@ -177,7 +177,7 @@
 				<div class="user-details">
 				  <div class="input-box">
 					<span class="details">Customer name</span>
-					 <input type="text" name="name" required id="customerName">
+					 <input type="text" placeholder= "Don't input vietnamese" name="name" required id="customerName">
 					<span id="errorName" style="color: red;"></span>
 					<span id="errorName_all_leter" style="color: red;"></span>
 				  </div>
@@ -193,7 +193,7 @@
 					<span id="errorId" style="color: red;"></span>
 				  </div>
 				  <div class="input-box">
-					<span class="details">Address</span> <input type="text"
+					<span class="details">Address</span> <input type="text" placeholder= "Don't input vietnamese"
 					  name="address" required id="customerAddress">
 					<span id="errorAddress" style="color: red;"></span>
 				  </div>

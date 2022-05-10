@@ -16,7 +16,7 @@ var kiemTraRong = function (idValue, idError) {
     var inputText = document.getElementById(idValue);
 
     if (inputText.value.trim() === '') {
-        document.getElementById(idError).innerHTML = inputText.name + ' không được bỏ trống !';
+        document.getElementById(idError).innerHTML = ' Can not be left blank !';
         document.getElementById(idError).style.display = 'block';
 
         return false;
@@ -38,10 +38,11 @@ var kiemTraTatCaLaChu = function (selectorValue, selectorError) {
         return true;
     } else {
         //Không hợp lệ
-        document.querySelector(selectorError).innerHTML = inputText.name + ' phải là chữ !';
+        document.querySelector(selectorError).innerHTML = ' Please enter an unsigned character !';
         document.querySelector(selectorError).style.display = 'block';
         return false;
-    }
+    } 
+
 }
 var kiemTraTatCaLaSo = function (selectorValue, selectorError) {
     var inputText = document.querySelector(selectorValue);
@@ -52,7 +53,7 @@ var kiemTraTatCaLaSo = function (selectorValue, selectorError) {
         document.querySelector(selectorError).style.display = 'none';
         return true;
     } else {
-        document.querySelector(selectorError).innerHTML = inputText.name + ' yêu cầu nhập số !';
+        document.querySelector(selectorError).innerHTML = ' please enter number !';
         document.querySelector(selectorError).style.display = 'block';
         return false;
     }

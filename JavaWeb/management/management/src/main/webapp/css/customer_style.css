@@ -9,18 +9,16 @@
 	margin-bottom: 10px;
 }
 
-.box-search-invoices input {
+.box-search-invoices input, .box-search-customer input, .box-search-detailinvoice input{
 	width: 300px;
-	padding: 5px;
+	height: 38px;
+	line-height: 38px;
 	border: 1px solid silver;
-	padding: 5px;
+	
 }
 
 .box-search-customer input, .box-search-detailinvoice input {
 	width: 250px;
-	padding: 5px;
-	border: 1px solid silver;
-	padding: 5px;
 }
 
 .ti-search {
